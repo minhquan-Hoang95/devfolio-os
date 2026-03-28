@@ -19,6 +19,7 @@
     <div style="max-width: 800px; margin: 2rem auto; font-family: sans-serif;">
         <h1>Mes projects ({{ projects|length }}</h1>
 
+        <p>{{ total }} projets · Langages : {{ languages|join(', ') }}</p>
         {% for project in projects %}
 
         <div style="border: 1px solid #ddd; border-radius: 8px; padding: 1rem; margin-bottom: 1rem;" >
