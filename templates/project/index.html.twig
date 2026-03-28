@@ -22,7 +22,11 @@
         {% for project in projects %}
 
         <div style="border: 1px solid #ddd; border-radius: 8px; padding: 1rem; margin-bottom: 1rem;" >
-            <h2> {{ project.name }}</h2>
+            <h2>
+                <a href="{{ path('app_project_show', {id: project.id}) }}">
+                    {{ project.name }}
+                </a>
+            </h2>
 
             <p><strong>Langage :</strong> {{ project.language }}</p>
 

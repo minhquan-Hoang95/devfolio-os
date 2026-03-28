@@ -1,0 +1,30 @@
+{% extends 'base.html.twig' %}
+
+
+{% block title %}{{ project.name }}{% endblock %}
+
+{% block body %}
+
+    <div style="max-width: 800px; margin: 2rem auto; font-family: sans-serif;">
+        <a href="{{ path('app_projects') }}" > ← Retour aux projets </a>
+
+        <h1>{{ project.name }}</h1>
+
+        <p><strong>Langage :</strong> {{ project.language }}</p>
+        <p><strong>Créé le :</strong> {{ project.createdAt|date('d/m/Y') }}</p>
+
+        {% if project.githubUrl %}
+            <p>
+                <a href="{{ project.githubUrl }}" target="_blank">
+                    Voir sur GitHub
+                </a>
+            </p>
+        {% endif %}
+
+        <h2>Description</h2>
+        <p>{{ project.description }}</p>
+
+    </div>
+
+{% endblock %}
+

@@ -2,6 +2,7 @@
 
 namespace App\Controller;
 
+use App\Entity\Project;
 use App\Repository\ProjectRepository;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
@@ -17,4 +18,13 @@ final class ProjectController extends AbstractController
             'projects' => $projects,
         ]);
     }
+
+    #[Route('/projects/{id}', name: 'app_project_show')]
+    public function show(Project $project): Response
+    {
+        return $this->render('project/show.html.twig', [
+            'project' => $project,
+        ]);
+    }
+
 }
