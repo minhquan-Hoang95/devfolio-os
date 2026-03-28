@@ -10,12 +10,15 @@ RUN apk add --no-cache \
     libzip-dev \
     icu-dev \
     postgresql-dev \
-    oniguruma-dev
+    oniguruma-dev \
+    autoconf \
+    g++ \
+    make
 
 # Install PHP extensions \
 RUN docker-php-ext-install \
     pdo \
-    pdo_mysql \
+    pdo_pgsql \
     pgsql \
     intl \
     zip \
